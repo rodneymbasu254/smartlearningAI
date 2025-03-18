@@ -11,15 +11,11 @@ from app.services.past_paper_analyzer import (
     analyze_frequent_topics
 )
 
-app = FastAPI(title="SmartLearning AI")  # <-- This should appear before route definitions
+app = FastAPI(title="SmartLearning AI")
 
-# Optional: Dummy function for demo purposes
-async def get_weekly_topics_from_db(unit):
-    return [
-        "Introduction to Topic",
-        "Intermediate Concepts",
-        "Advanced Theories"
-    ]
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to smart learning ai"}
 
 
 @app.post("/analyze-past-paper")
