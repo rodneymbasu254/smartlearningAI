@@ -3,9 +3,9 @@ services:
     name: fastapi-backend
     env: python
     plan: free
-    buildCommand: "pip install -r requirements.txt"
+    buildCommand: "pip install -r app/requirements.txt"
     startCommand: "uvicorn app.main:app --host 0.0.0.0 --port 10000"
     runtime: python
     region: oregon
-    branch: main  # or replace with your actual branch name
+    branch: main
     autoDeploy: true
